@@ -18,6 +18,7 @@ void do_nms(box *boxes, float **probs, int total, int classes, float thresh);
 extern "C" {
 #endif
 	void do_nms_sort( box *boxes, float **probs, int total, int classes, float thresh );
+	void do_nms_obj( box *boxes, float **probs, int total, int classes, float thresh );
 #ifdef __cplusplus 
 }
 #endif
