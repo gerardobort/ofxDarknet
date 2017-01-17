@@ -6,7 +6,7 @@ void ofApp::setup()
 	std::string cfgfile = ofToDataPath( "cfg/yolo9000.cfg" );
 	std::string weightfile = ofToDataPath( "yolo9000.weights" );
 	std::string nameslist = ofToDataPath( "cfg/coco.list" );
-	darknet.init( cfgfile, weightfile, datacfg, nameslist );
+	darknet.init( cfgfile, weightfile, datacfg );
 
 	video.setDeviceID( 0 );
 	video.setDesiredFrameRate( 30 );

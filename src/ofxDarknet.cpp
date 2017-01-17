@@ -10,19 +10,18 @@ ofxDarknet::~ofxDarknet()
 
 void ofxDarknet::init( std::string cfgfile, std::string weightfile, std::string datacfg, std::string nameslist )
 {
-    cuda_set_device(0);
-	net = parse_network_cfg( cfgfile.c_str() );
-	load_weights( &net, weightfile.c_str() );
-	set_batch_network( &net, 1 );
+    //cuda_set_device(0);
 
 	if( !datacfg.empty() )
 	{
-		options1 = read_data_cfg((char *) datacfg.c_str() );
+		options1 = read_data_cfg( ( char * ) datacfg.c_str() );
 	}
-	if( !nameslist.empty() )
-	{
-		names = get_labels( option_find_str( options1, "names", nameslist.c_str() ) );
-	}
+
+	names = get_labels( option_find_str( options1, "names", nameslist.c_str() ) );
+
+	net = parse_network_cfg( cfgfile.c_str() );
+	load_weights( &net, weightfile.c_str() );
+	set_batch_network( &net, 1 );
 }
 
 std::vector< detected_object > ofxDarknet::yolo( ofPixels & pix, float threshold /*= 0.24f */ )

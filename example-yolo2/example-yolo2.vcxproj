@@ -129,6 +129,9 @@
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories);..\..\..\addons\ofxDarknet\libs\3rdparty\lib\vs\x64;..\..\..\addons\ofxDarknet\libs\cuda\lib\vs\x64;..\..\..\addons\ofxDarknet\libs\darknet\lib\vs\x64\Debug;..\..\..\addons\ofxOpenCv\libs\opencv\lib\vs\x64\Debug</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent />
+    <CudaCompile>
+      <CodeGeneration>compute_52,sm_52</CodeGeneration>
+    </CudaCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -193,7 +196,6 @@
     <ClCompile Include="..\..\..\addons\ofxDarknet\libs\darknet\include\connected_layer.c" />
     <ClCompile Include="..\..\..\addons\ofxDarknet\libs\darknet\include\convolutional_layer.c" />
     <ClCompile Include="..\..\..\addons\ofxDarknet\libs\darknet\include\cost_layer.c" />
-    <ClCompile Include="..\..\..\addons\ofxDarknet\libs\darknet\include\cpu_gemm.c" />
     <ClCompile Include="..\..\..\addons\ofxDarknet\libs\darknet\include\crnn_layer.c" />
     <ClCompile Include="..\..\..\addons\ofxDarknet\libs\darknet\include\crop_layer.c" />
     <ClCompile Include="..\..\..\addons\ofxDarknet\libs\darknet\include\cuda.c" />

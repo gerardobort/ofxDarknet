@@ -1033,6 +1033,8 @@ void load_weights_upto( network *net, char *filename, int cutoff )
         layer l = net->layers[i];
         if (l.dontload) continue;
         if(l.type == CONVOLUTIONAL){
+			fprintf( stderr, "loading layer.." );
+			fflush( stdout );
             load_convolutional_weights(l, fp);
         }
         if(l.type == CONNECTED){
