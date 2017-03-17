@@ -10,7 +10,8 @@ ofxDarknet::~ofxDarknet()
 
 void ofxDarknet::init( std::string cfgfile, std::string weightfile, std::string nameslist )
 {
-    cuda_set_device(0);
+    //cuda_set_device(0);
+	gpu_index = -1;
 	net = parse_network_cfg( cfgfile.c_str() );
 	load_weights( &net, weightfile.c_str() );
 	set_batch_network( &net, 1 );

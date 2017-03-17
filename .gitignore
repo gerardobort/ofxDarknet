@@ -1,0 +1,7 @@
+example-*/bin/*.app
+example-*/obj
+.DS_Store
+libs/darknet/cMake/CMakeCache.txt
+libs/darknet/cMake/CMakeFiles
+libs/darknet/cMake/Makefile
+libs/darknet/cMake/cmake_install.cmake
